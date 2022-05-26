@@ -1,0 +1,32 @@
+{
+  "name": "alalacampo",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emailjs/browser": "^3.6.2",
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/react-fontawesome": "^0.1.18",
+    "@hookform/resolvers": "^2.8.10",
+    "embla-carousel-react": "^6.2.0",
+    "leaflet": "^1.8.0",
+    "next": "12.1.6",
+    "react": "18.1.0",
+    "react-dom": "18.1.0",
+    "react-hook-form": "^7.31.2",
+    "react-leaflet": "^4.0.0",
+    "react-responsive-carousel": "^3.2.23",
+    "sass": "^1.52.1",
+    "yup": "^0.32.11"
+  },
+  "devDependencies": {
+    "eslint": "8.16.0",
+    "eslint-config-next": "12.1.6"
+  }
+}

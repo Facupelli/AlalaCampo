@@ -1,0 +1,41 @@
+@import "../../styles/app.scss";
+
+.container {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem 0rem;
+
+  & p:first-child {
+    font-weight: bold;
+
+    @media only screen and (max-width: 600px) {
+      font-size: 0.8rem;
+    }
+  }
+
+  div {
+    color: #bd9f37;
+    font-size: 0.8rem;
+
+    @media only screen and (max-width: 600px) {
+      margin-top: 1rem;
+      color: #bd9f37;
+    }
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .2rem;
+    color: #bd9f37;
+    text-decoration: none;
+    &:visited {
+      color: #bd9f37;
+    }
+    &:hover {
+      color: black;
+    }
+  }
+}
