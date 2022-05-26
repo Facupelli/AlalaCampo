@@ -11,6 +11,7 @@ export default function Footer() {
         <a
           href="https://www.linkedin.com/in/facundo-pellicer-full-stack-developer/"
           target="_blank"
+          rel="noreferrer"
         >
           made with{" "}
           <FontAwesomeIcon icon={faHeart} width="15px" height="15px" />{" "}
