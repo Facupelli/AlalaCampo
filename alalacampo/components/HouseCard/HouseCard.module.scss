@@ -5,6 +5,11 @@
   margin-bottom: 6rem;
 }
 
+.container_with_calendar {
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
 .grid_container {
   display: grid;
   grid-template-columns: 50% 50%;
@@ -22,6 +27,37 @@
   // &:hover .spec{
   // clip-path: circle(75% );
   // }
+
+  .buttons {
+    grid-column: 2;
+    padding: 1rem;
+    margin-left: auto;
+    display: flex;
+    gap: 1rem;
+
+    button {
+      padding: .7rem 1rem;
+      border-radius: 1rem;
+      border: 0;
+      background: $primary;
+      // color: black;
+      font-weight: bold;
+      font-size: 1.2rem;
+      letter-spacing: 0.1rem;
+      // margin-top: 2rem;
+      // margin-bottom: 1.8rem;
+      // width: 50%;
+      font-size: 0.8rem;
+      
+      transition: all 0.2s ease-in-out;
+      
+      &:hover {
+        cursor: pointer;
+        background-color: #ffe76e;
+        color: #363636;
+      }
+    }
+  }
 }
 
 .carousel {
@@ -116,42 +152,41 @@
   }
 }
 
-.button_container {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  z-index: 2;
-  width: 95%;
-  display: flex;
-  justify-content: flex-end;
-  margin-right: 2rem;
+// .button_container {
+//   position: absolute;
+//   bottom: 0;
+//   right: 0;
+//   z-index: 2;
+//   width: 95%;
+//   display: flex;
+//   justify-content: flex-end;
+//   margin-right: 2rem;
 
-  @media only screen and (max-width: 600px) {
-    position: relative;
-  }
+//   @media only screen and (max-width: 600px) {
+//     position: relative;
+//   }
 
-  button {
-    padding: 0.6rem;
-    text-decoration: none;
-    border-radius: 1rem;
-    border: 0;
-    background: $primary;
-    color: black;
-    font-weight: bold;
-    font-size: 1.2rem;
-    letter-spacing: 0.1rem;
-    margin-top: 2rem;
-    margin-bottom: 1.8rem;
-    width: 50%;
-    cursor: pointer;
-    font-size: 0.8rem;
+//   button {
+//     padding: 0.6rem;
+//     text-decoration: none;
+//     border-radius: 1rem;
+//     border: 0;
+//     background: $primary;
+//     color: black;
+//     font-weight: bold;
+//     font-size: 1.2rem;
+//     letter-spacing: 0.1rem;
+//     margin-top: 2rem;
+//     margin-bottom: 1.8rem;
+//     width: 50%;
+//     cursor: pointer;
+//     font-size: 0.8rem;
 
-    transition: all 0.2s ease-in-out;
+//     transition: all 0.2s ease-in-out;
 
-    &:hover {
-      background-color: #ffe76e;
-      color: #363636;
-    }
-  }
-}
-
+//     &:hover {
+//       background-color: #ffe76e;
+//       color: #363636;
+//     }
+//   }
+// }

@@ -1,0 +1,52 @@
+.container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  > div {
+    grid-column: 2;
+    display: flex;
+
+    .iden {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      .disponible {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        > div {
+          height: 25px;
+          width: 25px;
+          background-color: beige;
+          border-radius: 0.3rem;
+        }
+      }
+
+      .reservado {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        > div {
+          height: 25px;
+          width: 25px;
+          background-color: #ffe76e;
+          border-radius: 0.3rem;
+        }
+      }
+    }
+  }
+}
+
+.calendar {
+  border: none;
+  margin-bottom: 6rem;
+  margin-left: auto;
+}
+
+.tile {
+  background-color: beige;
+}
+
+.booking_tile {
+  background-color: #ffe76e;
+}

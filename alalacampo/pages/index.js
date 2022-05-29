@@ -9,6 +9,8 @@ import Footer from "../components/Footer/Footer";
 import Map from "../components/MapSection/MapSection";
 import Interes from "../components/Interes/Interes";
 import Pics from "../components/Pics/Pics";
+import dbConnect from "../lib/dbConnect";
+import Booking from "../models/Booking";
 
 //IMAGES
 import { coratinaImages } from "../utils/coratinPhotos";
@@ -17,7 +19,7 @@ import { araucoImages } from "../utils/araucoPohtos";
 
 import s from "../styles/Home.module.scss";
 
-export default function Home() {
+export default function Home({ bookings }) {
   const contactRef = useRef(null);
   const inicioRef = useRef(null);
   const casasRef = useRef(null);
@@ -64,16 +66,19 @@ export default function Home() {
               images={araucoImages}
               handleClick={handleConsultarClick}
               casasRef={casasRef}
+              bookings={bookings}
             />
             <HouseCard
               name="coratina"
               images={coratinaImages}
               handleClick={handleConsultarClick}
+              bookings={bookings}
             />
             <HouseCard
               name="aloreña"
               images={aloreImages}
               handleClick={handleConsultarClick}
+              bookings={bookings}
             />
 
             <Map ubicacionRef={ubicacionRef} />
@@ -91,4 +96,32 @@ export default function Home() {
       </div>
     </div>
   );
+}
+
+export async function getServerSideProps() {
+  try {
+    await dbConnect();
+
+    const res_arauco = await Booking.find({ house: "arauco" });
+
+    const arauco_bookings = res_arauco.map((doc) => {
+      const book = doc.toObject();
+      book._id = book._id.toString();
+      return book;
+    });
+
+    console.log("BOOKINGS", arauco_bookings);
+
+    return {
+      props: {
+        bookings: {
+          arauco: arauco_bookings,
+          coratina: [],
+          alorenia: [],
+        },
+      },
+    };
+  } catch (e) {
+    console.log(e);
+  }
 }
