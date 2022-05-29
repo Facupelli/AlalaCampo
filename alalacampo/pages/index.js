@@ -44,8 +44,8 @@ export default function Home({ bookings }) {
     <div>
       <Head>
         <title>Alala Campo</title>
-        <meta name="description" content="San Juan, Pocito, Alala Campo, alquiler casa, finca, cabaña." />
-        <link rel="icon" href="/media/alalaLogo.png" />
+        <meta name="description" content="San Juan, Pocito, Alala Campo, alquiler casa, finca, cabaña. " />
+        <link rel="icon" href="/iconAlala.ico" />
       </Head>
 
       <main className={s.app_container}>

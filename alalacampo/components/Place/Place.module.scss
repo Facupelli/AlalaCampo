@@ -8,6 +8,7 @@
   object-fit: cover;
   object-position: 100% 10%;
   max-height: 800px;
+  position: relative;
 
   @media only screen and (max-width: 600px) {
     display: none;

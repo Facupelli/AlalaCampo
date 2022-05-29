@@ -10,7 +10,7 @@ export default function Place() {
     <div className={s.container}>
       <p className={s.text}>ALALA CAMPO VENI A DESCANSAR</p>
       <div className={s.image}>
-        <Image src={complejo} alt="place" layout="fill" objectFit="cover" objectPosition="100% 10%" />
+        <Image src={complejo} priority alt="place" layout="fill" objectFit="cover" objectPosition="100% 10%" />
       </div>
       <div className={s.imageV}>
         <Image src={complejo} alt="place2" layout="fill" objectFit="cover" objectPosition="85% 100%"/>
