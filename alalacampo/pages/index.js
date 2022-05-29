@@ -44,7 +44,8 @@ export default function Home({ bookings }) {
     <div>
       <Head>
         <title>Alala Campo</title>
-        <meta name="description" content="San Juan, Pocito, Alala Campo, alquiler casa, finca, cabaña. " />
+        <meta name="description" content="San Juan, Pocito. Veni a descansar a Alala Campo!" />
+        <meta name="keywords" content="San Juan, Pocito, Alala Campo, alquiler, casa, finca, cabaña. " />
         <link rel="icon" href="/iconAlala.ico" />
       </Head>
 
