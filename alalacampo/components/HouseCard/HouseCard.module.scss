@@ -34,6 +34,11 @@
     margin-left: auto;
     display: flex;
     gap: 1rem;
+    flex-wrap: wrap;
+
+    @media only screen and (max-width: 600px) {
+      grid-column: 1/-1;
+    }
 
     button {
       padding: .7rem 1rem;
