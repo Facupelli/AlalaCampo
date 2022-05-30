@@ -16,7 +16,7 @@ export default function HouseCard({
   bookings,
 }) {
   const Calendar = dynamic(() => import("./Calendar/Calendar"), {
-    loading: () => <p>Cargando...</p>,
+    loading: () => <p className={s.cargando}>Cargando...</p>,
     ssr: false,
   });
 

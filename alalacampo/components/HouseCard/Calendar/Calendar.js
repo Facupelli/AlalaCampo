@@ -50,6 +50,7 @@ export default function CalendarComponent({ bookings }) {
             value={value}
             locale="es-419"
             minDate={new Date("05-29-2022")}
+            // selectRange={true}
             // tileContent={({ activeStartDate, date, view }) =>
             //   date.toString() ===
             //   "Sun Jun 05 2022 00:00:00 GMT-0300 (hora estándar de Argentina)"
