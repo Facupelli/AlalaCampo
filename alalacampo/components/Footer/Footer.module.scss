@@ -6,6 +6,17 @@
   margin-right: auto;
   padding: 1rem 0rem;
 
+  .admin {
+    color: #bd9f37;
+    margin-top: 0.3rem;
+    font-size: 0.9rem;
+
+    &:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+
   & p:first-child {
     font-weight: bold;
 
@@ -17,25 +28,26 @@
   div {
     color: #bd9f37;
     font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     @media only screen and (max-width: 600px) {
       margin-top: 1rem;
       color: #bd9f37;
     }
-  }
-
-  a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: .2rem;
-    color: #bd9f37;
-    text-decoration: none;
-    &:visited {
+    a {
+      display: flex;
+      align-items: center;
+      gap: 0.2rem;
       color: #bd9f37;
-    }
-    &:hover {
-      color: black;
+      text-decoration: none;
+      &:visited {
+        color: #bd9f37;
+      }
+      &:hover {
+        color: black;
+      }
     }
   }
 }
