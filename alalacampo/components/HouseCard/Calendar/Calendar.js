@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Calendar from "react-calendar";
-import { date } from "yup";
+// import "react-calendar/dist/Calendar.css";
 
 import s from "./Calendar.module.scss";
 
@@ -43,33 +43,29 @@ export default function CalendarComponent({ bookings }) {
           </div>
         </div>
 
-        <Calendar
-          className={s.calendar}
-          onChange={onChange}
-          value={value}
-          locale="es-419"
-          minDate={new Date("05-29-2022")}
-          // tileContent={({ activeStartDate, date, view }) =>
-          //   date.toString() ===
-          //   "Sun Jun 05 2022 00:00:00 GMT-0300 (hora estándar de Argentina)"
-          //     ? "Reservado"
-          //     : null
-          // }
-          tileClassName={
-            ({ date, view }) => {
+        <div className={s.calendar_container}>
+          <Calendar
+            className="react-calendar"
+            onChange={onChange}
+            value={value}
+            locale="es-419"
+            minDate={new Date("05-29-2022")}
+            // tileContent={({ activeStartDate, date, view }) =>
+            //   date.toString() ===
+            //   "Sun Jun 05 2022 00:00:00 GMT-0300 (hora estándar de Argentina)"
+            //     ? "Reservado"
+            //     : null
+            // }
+
+            tileClassName={({ date, view }) => {
               if (days_taken.find((day) => day === date.toString())) {
                 return s.booking_tile;
               } else {
                 return s.tile;
               }
-            }
-
-            // date.toString() ===
-            // "Sun Jun 05 2022 00:00:00 GMT-0300 (hora estándar de Argentina)"
-            //   ? s.tile
-            //   : null
-          }
-        />
+            }}
+          />
+        </div>
       </div>
     </div>
   );

@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 
-import "react-calendar/dist/Calendar.css";
 import s from "./HouseCard.module.scss";
 import { useState } from "react";
 

@@ -1,6 +1,7 @@
 .container {
   display: grid;
   grid-template-columns: 50% 50%;
+  margin-bottom: 6rem;
 
   @media only screen and (max-width: 600px) {
     display: block;
@@ -9,6 +10,7 @@
   > div {
     grid-column: 2;
     display: flex;
+    align-items: flex-start;
 
     @media only screen and (max-width: 600px) {
       display: block;
@@ -50,16 +52,22 @@
   }
 }
 
-.calendar {
-  border: none;
-  margin-bottom: 6rem;
-  margin-left: auto;
+.calendar_container{
+    margin-left: auto;
 }
 
 .tile {
-  background-color: beige;
+  max-width: 100%;
+  padding: 10px 6.6667px;
+  background: none;
+  text-align: center;
+  line-height: 16px;
 }
 
 .booking_tile {
-  background-color: #ffe76e;
+  background: #ffe76e;
+  max-width: 100%;
+  padding: 10px 6.6667px;
+  text-align: center;
+  line-height: 16px;
 }
