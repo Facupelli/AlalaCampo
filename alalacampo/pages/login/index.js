@@ -1,11 +1,16 @@
 import axios from "axios";
-import { useEffect, useRef, useContext, useState } from "react";
+import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import AuthContext from "../../context/AuthProvider";
+import { useRouter } from "next/router";
+import Footer from "../../components/Footer/Footer";
+
+import s from "./login.module.scss";
 
 export default function Login() {
-  const { setAuth } = useContext(AuthContext);
+  const { auth, setAuth } = useContext(AuthContext);
   const [loginErr, setLoginErr] = useState("");
+  const router = useRouter();
 
   const {
     register,
@@ -14,13 +19,11 @@ export default function Login() {
     reset,
   } = useForm();
 
-  //   const emailRef = useRef(null)
-
-  //   useEffect(() => {
-  //     emailRef.current.focus()
-  //   },[])
-
   const onSubmit = async (data) => {
+    if (auth.email && auth.accessToken) {
+      setLoginErr("Ya estas logueado!");
+      return;
+    }
     try {
       const response = await axios.post(
         "http://localhost:3000/api/login",
@@ -31,29 +34,35 @@ export default function Login() {
         }
       );
       console.log(response?.data);
-      const accessToken = response?.data?.accessToken;
+      const accessToken = response?.data?.token;
       setAuth({ email: data.email, pwd: data.password, accessToken });
-      setLoginErr('');
-    } catch (e) {
-      setLoginErr(e?.response?.data?.error);
+      setLoginErr("");
+      router.push("/");
+    } catch (err) {
+      setLoginErr(err?.response?.data?.error);
     }
   };
 
   return (
-    <div>
-      <p>Login</p>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <input
-          autoFocus
-          type="text"
-          placeholder="nico@gmail.com"
-          required
-          {...register("email")}
-        />
-        <input type="password" required {...register("password")} />
-        <button type="submit">login</button>
-      </form>
-      <p>{loginErr && loginErr}</p>
-    </div>
+    <>
+      <div className={s.container}>
+        <p className={s.login}>HOLA DE NUEVO!</p>
+        <form onSubmit={handleSubmit(onSubmit)} className={s.form}>
+          <input
+            autoFocus
+            type="text"
+            placeholder="nico@gmail.com"
+            required
+            {...register("email")}
+          />
+          <input type="password" required {...register("password")} />
+          <button type="submit">LOGIN</button>
+        </form>
+        <p className={s.err}>{loginErr && loginErr}</p>
+      </div>
+      <div className={s.footer_container}>
+        <Footer />
+      </div>
+    </>
   );
 }

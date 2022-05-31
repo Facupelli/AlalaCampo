@@ -6,6 +6,10 @@
   margin-right: auto;
   padding: 1rem 0rem;
 
+  @media only screen and (max-width: 400px) {
+    margin: 0rem 1rem;
+  }
+
   .admin {
     color: #bd9f37;
     margin-top: 0.3rem;
@@ -19,6 +23,10 @@
 
   & p:first-child {
     font-weight: bold;
+
+    &:hover {
+      cursor: pointer;
+    }
 
     @media only screen and (max-width: 600px) {
       font-size: 0.8rem;

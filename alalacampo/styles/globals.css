@@ -6,7 +6,6 @@ p,
 li {
   padding: 0;
   margin: 0;
-  font-family: "Crete Round", serif;
 }
 
 a {
@@ -16,4 +15,5 @@ a {
 
 * {
   box-sizing: border-box;
+  font-family: "Crete Round", serif;
 }

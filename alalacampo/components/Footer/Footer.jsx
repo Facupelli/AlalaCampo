@@ -7,7 +7,9 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer className={s.container}>
-      <p>ALALA CAMPO</p>
+      <Link href="/">
+        <p>ALALA CAMPO</p>
+      </Link>
       <Link href="/login">
         <p className={s.admin}>Admin</p>
       </Link>
