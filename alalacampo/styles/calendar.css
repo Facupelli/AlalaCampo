@@ -103,7 +103,7 @@ abbr[title] {
   /* font-weight: bold;*/
 }
 .react-calendar__tile--now {
-  padding: 7px;
+  padding: 2 4px;
   line-height: 28px;
   border-radius: 100%;
   box-shadow: rgba(187, 187, 187, 0.582) 0px 0px 4px 2px;
