@@ -1,0 +1,70 @@
+@import "../../../../styles/app.scss";
+
+.booking_container {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  margin-top: 1rem;
+
+  .range {
+    p {
+      &:first-child {
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    span {
+      font-weight: 900;
+    }
+  }
+
+  .book_btn_container {
+    margin-left: auto;
+
+    button {
+      border-radius: 0.5rem;
+      border: none;
+      padding: 0.5rem 1rem;
+      background-color: $primary;
+      box-shadow: rgba(61, 61, 61, 0.192) 0px 0px 4px 1px;
+      font-size: 0.9rem;
+
+      &:hover {
+        cursor: pointer;
+        background-color: $primaryBG;
+      }
+    }
+  }
+
+  .book_inpit_container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: -190px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 0px 3px 1px;
+    padding: .7rem;
+    border-radius: .2rem;
+
+    label{
+      margin-bottom: .2rem;
+      font-size: .9rem;
+    }
+
+    input {
+      width: 150px;
+      padding: .4rem;
+      // border-radius: 0.5rem;
+      border: none;
+      font-size: 1rem;
+      // box-shadow: rgba(36, 36, 36, 0.295) 0px 0px 3px 1px;
+      border-bottom: 1px solid $primaryBG;
+      background-color: $primary;
+
+      &:focus {
+        outline: none;
+        // box-shadow: rgba(36, 36, 36, 0.247) 0px 0px 3px 2px;
+      }
+    }
+  }
+}

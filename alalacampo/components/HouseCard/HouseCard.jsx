@@ -20,6 +20,8 @@ export default function HouseCard({
     ssr: false,
   });
 
+  console.log('BOOKINGS',bookings)
+
   const [showCalendar, setShowCalendar] = useState({
     arauco: false,
     coratina: false,
@@ -159,7 +161,7 @@ export default function HouseCard({
         <Calendar bookings={bookings.coratina} house="coratina" />
       )}
       {name === "aloreña" && showCalendar.aloreña && (
-        <Calendar bookings={bookings.alorenia} house="aloreña" />
+        <Calendar bookings={bookings.aloreña ? bookings.aloreña : []} house="aloreña" />
       )}
     </>
   );

@@ -33,7 +33,6 @@ export default function Login() {
           withCredentials: true,
         }
       );
-      console.log(response?.data);
       const accessToken = response?.data?.token;
       setAuth({ email: data.email, accessToken });
       setLoginErr("");

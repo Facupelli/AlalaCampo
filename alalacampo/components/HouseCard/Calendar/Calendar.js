@@ -4,6 +4,8 @@ import AuthContext from "../../../context/AuthProvider";
 import Calendar from "react-calendar";
 
 import s from "./Calendar.module.scss";
+import BookInfo from "./BookInfo/BookInfo";
+import BookAction from "./BookAction/BookAction";
 
 export default function CalendarComponent({ bookings, house }) {
   const { auth, setAuth } = useContext(AuthContext);
@@ -11,8 +13,22 @@ export default function CalendarComponent({ bookings, house }) {
   const [allowRange, setAllowRange] = useState(false);
   const [message, setMessage] = useState("");
   const [errMsg, setErrMsg] = useState("");
+  const [bookInfo, setBookInfo] = useState(null);
+  const [nameInput, setNameInput] = useState("");
 
   const days_taken = bookings.map((book) => book.day).flat();
+
+  const handleNameBook = (e) => {
+    setNameInput(e.target.value);
+  };
+
+  const clickedDay = (value) => {
+    const dayClicked = value.toDateString().split(" ").slice(1, 4).join(" ");
+
+    const book = bookings.filter((book) => book.day.includes(dayClicked));
+
+    setBookInfo(book[0]);
+  };
 
   const handleBook = async () => {
     const startDay = value[0].toDateString().split(" ")[2];
@@ -31,12 +47,15 @@ export default function CalendarComponent({ bookings, house }) {
     const day = [];
 
     for (let i = startDay; i <= endDay; i++) {
-      day.push(`${daysInfo.month} ${i} ${daysInfo.year}`);
+      if (i > 10) {
+        day.push(`${daysInfo.month} ${i} ${daysInfo.year}`);
+      }
+      day.push(`${daysInfo.month} 0${i} ${daysInfo.year}`);
     }
     const data = {
       day,
       house,
-      name: "Famar Booking",
+      name: nameInput,
     };
 
     try {
@@ -56,7 +75,7 @@ export default function CalendarComponent({ bookings, house }) {
 
   return (
     <div className={s.container}>
-      <div>
+      <div className={s.first_column}>
         <div className={s.iden}>
           <div className={s.disponible}>
             <div></div>
@@ -88,7 +107,7 @@ export default function CalendarComponent({ bookings, house }) {
             locale="es-419"
             minDate={new Date("05-29-2022")}
             selectRange={allowRange}
-            // onClickDay={auth.accessToken ? null : () => console.log("nada")}
+            onClickDay={auth.accessToken ? (value) => clickedDay(value) : null}
             // tileContent={({ activeStartDate, date, view }) =>
             //   date.toString() ===
             //   "Sun Jun 05 2022 00:00:00 GMT-0300 (hora estándar de Argentina)"
@@ -109,29 +128,16 @@ export default function CalendarComponent({ bookings, house }) {
               }
             }}
           />
+
           {auth.accessToken && (
-            <div className={s.booking_container}>
-              {value.length > 0 ? (
-                <div className={s.range}>
-                  <p>
-                    <span>Inicio:</span> {value[0].toDateString()}
-                  </p>
-                  <p>
-                    <span>Fin:</span> {value[1].toDateString()}
-                  </p>
-                </div>
-              ) : (
-                <div className={s.range}>
-                  <p>
-                    <span>Fecha:</span> {value.toDateString()}
-                  </p>
-                </div>
-              )}
-              <div className={s.book_btn_container}>
-                <button onClick={handleBook}>Reservar</button>
-              </div>
-            </div>
+            <BookAction
+              nameInput={nameInput}
+              value={value}
+              handleBook={handleBook}
+              handleNameBook={handleNameBook}
+            />
           )}
+
           {auth.accessToken && (errMsg || message) && (
             <div className={s.message}>
               <p className={s.err_msg}>{errMsg && errMsg}</p>
@@ -140,6 +146,7 @@ export default function CalendarComponent({ bookings, house }) {
           )}
         </div>
       </div>
+      {auth.accessToken && <BookInfo bookInfo={bookInfo} />}
     </div>
   );
 }
