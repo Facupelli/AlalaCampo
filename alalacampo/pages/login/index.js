@@ -35,7 +35,7 @@ export default function Login() {
       );
       console.log(response?.data);
       const accessToken = response?.data?.token;
-      setAuth({ email: data.email, pwd: data.password, accessToken });
+      setAuth({ email: data.email, accessToken });
       setLoginErr("");
       router.push("/");
     } catch (err) {

@@ -1,33 +1,17 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import AuthContext from "../../../context/AuthProvider";
 import Calendar from "react-calendar";
-// import "react-calendar/dist/Calendar.css";
 
 import s from "./Calendar.module.scss";
 
 export default function CalendarComponent({ bookings }) {
+  const { auth, setAuth } = useContext(AuthContext);
   const [value, onChange] = useState(new Date());
+  const [allowRange, setAllowRange] = useState(false);
 
-  console.log(value);
-  console.log("BOOKINGS", bookings);
+  console.log("AUTH", auth);
 
   const days_taken = bookings.map((book) => book.day);
-
-  console.log("days_taken", days_taken);
-  console.log(
-    "FILTER",
-    days_taken.filter(
-      (day) =>
-        day === "Sat Jun 11 2022 00:00:00 GMT-0300 (hora estándar de Argentina)"
-    ).length === 1
-  );
-
-  const paintBookings = ({ activeStartDate, date, view }) => {
-    if (days_taken.filter((day) => day === date.toString())) {
-      s.tile;
-    } else {
-      null;
-    }
-  };
 
   return (
     <div className={s.container}>
@@ -41,6 +25,18 @@ export default function CalendarComponent({ bookings }) {
             <div></div>
             <p>Reservado</p>
           </div>
+          {auth.accessToken && (
+            <div className={s.btn_container}>
+              <button
+                type="button"
+                onClick={() => {
+                  setAllowRange(!allowRange);
+                }}
+              >
+                {allowRange ? "A Singular" : "A Rango"}
+              </button>
+            </div>
+          )}
         </div>
 
         <div className={s.calendar_container}>
@@ -50,7 +46,8 @@ export default function CalendarComponent({ bookings }) {
             value={value}
             locale="es-419"
             minDate={new Date("05-29-2022")}
-            // selectRange={true}
+            selectRange={allowRange}
+            onClickDay={auth.accessToken ? null : () => console.log("nada")}
             // tileContent={({ activeStartDate, date, view }) =>
             //   date.toString() ===
             //   "Sun Jun 05 2022 00:00:00 GMT-0300 (hora estándar de Argentina)"
@@ -62,10 +59,27 @@ export default function CalendarComponent({ bookings }) {
               if (days_taken.find((day) => day === date.toString())) {
                 return s.booking_tile;
               } else {
-                return s.tile;
+                return;
               }
             }}
           />
+          {auth.accessToken &&
+            (value.length > 0 ? (
+              <div className={s.range}>
+                <p>
+                  <span>Inicio:</span> {value[0].toDateString()}
+                </p>
+                <p>
+                  <span>Fin:</span> {value[1].toDateString()}
+                </p>
+              </div>
+            ) : (
+              <div className={s.range}>
+                <p>
+                  <span>Fecha:</span> {value.toDateString()}
+                </p>
+              </div>
+            ))}
         </div>
       </div>
     </div>

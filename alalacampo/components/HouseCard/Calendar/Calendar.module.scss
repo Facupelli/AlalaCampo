@@ -1,3 +1,5 @@
+@import '../../../styles/app.scss';
+
 .container {
   display: grid;
   grid-template-columns: 50% 50%;
@@ -32,7 +34,8 @@
         > div {
           height: 25px;
           width: 25px;
-          background-color: beige;
+          border: 1px solid black;
+          background-color: white;
           border-radius: 0.3rem;
         }
       }
@@ -44,16 +47,49 @@
         > div {
           height: 25px;
           width: 25px;
-          background-color: #ffe76e;
+          border: 1px solid black;
+          background-color: #27af37;
           border-radius: 0.3rem;
+        }
+      }
+
+      .btn_container{
+        margin-top: 1rem;
+
+        button{
+          border-radius: .5rem;
+          border: none;
+          padding: .5rem 1rem;
+          background-color: $primary;
+          box-shadow: rgba(61, 61, 61, 0.192) 0px 0px 4px 1px;
+          font-size: .9rem;
+
+          &:hover{
+            cursor: pointer;
+            background-color: $primaryBG;
+          }
         }
       }
     }
   }
 }
 
-.calendar_container{
-    margin-left: auto;
+.calendar_container {
+  margin-left: auto;
+
+  .range {
+    margin-top: 1rem;
+
+    p {
+      &:first-child {
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    span {
+      font-weight: 900;
+    }
+  }
 }
 
 .tile {
@@ -65,7 +101,8 @@
 }
 
 .booking_tile {
-  background: #ffe76e;
+  background: #27af37;
+  color: white;
   max-width: 100%;
   padding: 10px 6.6667px;
   text-align: center;

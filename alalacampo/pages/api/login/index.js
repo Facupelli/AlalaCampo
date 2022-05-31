@@ -25,7 +25,9 @@ export default async function login(req, res) {
       email: user.email,
     };
 
-    const token = jwt.sign(userForToken, process.env.TOKEN_SECRET_WORD);
+    const token = jwt.sign(userForToken, process.env.TOKEN_SECRET_WORD, {
+      expiresIn: "1d",
+    });
 
     res.json({
       name: user.name,
@@ -34,6 +36,6 @@ export default async function login(req, res) {
     });
   } else {
     // Handle any other HTTP method
-    res.status(500).json({error: 'only post'})
+    res.status(500).json({ error: "only post" });
   }
 }
