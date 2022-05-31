@@ -44,8 +44,14 @@ export default function Home({ bookings }) {
     <div>
       <Head>
         <title>Alala Campo</title>
-        <meta name="description" content="San Juan, Pocito. Veni a descansar a Alala Campo!" />
-        <meta name="keywords" content="San Juan, Pocito, Alala Campo, alquiler, casa, finca, cabaña. " />
+        <meta
+          name="description"
+          content="San Juan, Pocito. Veni a descansar a Alala Campo!"
+        />
+        <meta
+          name="keywords"
+          content="San Juan, Pocito, Alala Campo, alquiler, casa, finca, cabaña. "
+        />
         <link rel="icon" href="/iconAlala.ico" />
       </Head>
 
@@ -104,21 +110,33 @@ export async function getServerSideProps() {
     await dbConnect();
 
     const res_arauco = await Booking.find({ house: "arauco" });
+    const res_coratina = await Booking.find({ house: "coratina" });
+    const res_aloreña = await Booking.find({ house: "aloreña" });
 
-    const arauco_bookings = res_arauco.map((doc) => {
+    const arauco = res_arauco.map((doc) => {
       const book = doc.toObject();
       book._id = book._id.toString();
       return book;
     });
 
-    console.log("BOOKINGS", arauco_bookings);
+    const coratina = res_coratina.map((doc) => {
+      const book = doc.toObject();
+      book._id = book._id.toString();
+      return book;
+    });
+
+    const aloreña = res_aloreña.map((doc) => {
+      const book = doc.toObject();
+      book._id = book._id.toString();
+      return book;
+    });
 
     return {
       props: {
         bookings: {
-          arauco: arauco_bookings,
-          coratina: [],
-          alorenia: [],
+          arauco,
+          coratina,
+          aloreña,
         },
       },
     };

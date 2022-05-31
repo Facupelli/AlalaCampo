@@ -16,6 +16,8 @@ export default function CalendarComponent({ bookings, house }) {
   const [bookInfo, setBookInfo] = useState(null);
   const [nameInput, setNameInput] = useState("");
 
+  console.log("CALENDAR", bookings);
+
   const days_taken = bookings.map((book) => book.day).flat();
 
   const handleNameBook = (e) => {
@@ -70,6 +72,7 @@ export default function CalendarComponent({ bookings, house }) {
       setMessage("Reservado exitosamente!");
     } catch (err) {
       console.log(err?.response?.data);
+      setErrMsg(err?.response.data.message)
     }
   };
 
