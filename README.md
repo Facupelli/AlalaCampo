@@ -8,12 +8,15 @@ El administrador de la página posee una cuenta con la cual pueden entrar, confi
 
 ## Clientes
 
-<img src="./alalacampo/public/media/readme/home.png" alt="app_pc" />
-<img src="./alalacampo/public/media/readme/view_booked.png" alt="app_pc" />
-<img src="./alalacampo/public/media/readme/footer.png" alt="app_pc" />
+<img src="./alalacampo/public/media/readme/home.png" alt="home" />
+<img src="./alalacampo/public/media/readme/view_booked.png" alt="view" />
+<img src="./alalacampo/public/media/readme/footer.png" alt="footer" />
+
+<img src="./donutshomero/public/images/app_pc.png" alt="app_pc" />
+
 
 ## Admin
 
-<img src="./alalacampo/public/media/readme/login.png" alt="app_pc" />
-<img src="./alalacampo/public/media/readme/book_range.png" alt="app_pc" />
-<img src="./alalacampo/public/media/readme/book_info.png" alt="app_pc" />
+<img src="./alalacampo/public/media/readme/login.png" alt="login" />
+<img src="./alalacampo/public/media/readme/book_range.png" alt="range" />
+<img src="./alalacampo/public/media/readme/book_info.png" alt="info" />
