@@ -12,9 +12,6 @@ El administrador de la página posee una cuenta con la cual pueden entrar, confi
 <img src="./alalacampo/public/media/readme/view_booked.png" alt="view" />
 <img src="./alalacampo/public/media/readme/footer.png" alt="footer" />
 
-<img src="./donutshomero/public/images/app_pc.png" alt="app_pc" />
-
-
 ## Admin
 
 <img src="./alalacampo/public/media/readme/login.png" alt="login" />
