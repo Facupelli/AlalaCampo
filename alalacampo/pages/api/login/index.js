@@ -23,6 +23,7 @@ export default async function login(req, res) {
     const userForToken = {
       id: user._id,
       email: user.email,
+      password,
     };
 
     const token = jwt.sign(userForToken, process.env.TOKEN_SECRET_WORD, {

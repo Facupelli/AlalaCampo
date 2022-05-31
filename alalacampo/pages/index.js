@@ -1,5 +1,12 @@
+import axios from "axios";
+import jwt_decode from "jwt-decode";
 import Head from "next/head";
-import { useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
+import dbConnect from "../lib/dbConnect";
+import Booking from "../models/Booking";
+import AuthContext from "../context/AuthProvider";
+
+//COMPONENTS
 import Nav from "../components/Nav/Nav";
 import Place from "../components/Place/Place";
 import Common from "../components/Common/Common";
@@ -9,8 +16,6 @@ import Footer from "../components/Footer/Footer";
 import Map from "../components/MapSection/MapSection";
 import Interes from "../components/Interes/Interes";
 import Pics from "../components/Pics/Pics";
-import dbConnect from "../lib/dbConnect";
-import Booking from "../models/Booking";
 
 //IMAGES
 import { coratinaImages } from "../utils/coratinPhotos";
@@ -20,6 +25,32 @@ import { araucoImages } from "../utils/araucoPohtos";
 import s from "../styles/Home.module.scss";
 
 export default function Home({ bookings }) {
+  const { setAuth } = useContext(AuthContext);
+
+  useEffect(() => {
+    const accessToken = localStorage.getItem("accessToken");
+    if (accessToken) {
+      const payload = jwt_decode(accessToken);
+      const data = {
+        email: payload.email,
+        password: payload.password,
+      };
+      const login = async () => {
+        await axios.post(
+          "http://localhost:3000/api/login",
+          // "https://www.alalacampo.com/api/login",
+          data,
+          {
+            headers: { "Content-Type": "application/json" },
+            withCredentials: true,
+          }
+        );
+      };
+      login();
+      setAuth({ email: data.email, accessToken });
+    }
+  }, []);
+
   const contactRef = useRef(null);
   const inicioRef = useRef(null);
   const casasRef = useRef(null);

@@ -108,7 +108,7 @@ export default function CalendarComponent({ bookings, house }) {
           onChange={onChange}
           value={value}
           locale="es-419"
-          minDate={new Date("05-29-2022")}
+          minDate={new Date()}
           selectRange={allowRange}
           onClickDay={auth.accessToken ? (value) => clickedDay(value) : null}
           tileClassName={({ date, view }) => {

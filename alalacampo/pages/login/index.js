@@ -26,7 +26,8 @@ export default function Login() {
     }
     try {
       const response = await axios.post(
-        "https://www.alalacampo.com/api/login",
+        "http://localhost:3000/api/login",
+        // "https://www.alalacampo.com/api/login",
         data,
         {
           headers: { "Content-Type": "application/json" },
@@ -35,6 +36,7 @@ export default function Login() {
       );
       const accessToken = response?.data?.token;
       setAuth({ email: data.email, accessToken });
+      localStorage.setItem('accessToken', accessToken)
       setLoginErr("");
       router.push("/");
     } catch (err) {
