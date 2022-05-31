@@ -48,10 +48,10 @@ export default function CalendarComponent({ bookings, house }) {
     const day = [];
 
     for (let i = startDay; i <= endDay; i++) {
-      if (i > 10) {
-        day.push(`${daysInfo.month} ${i} ${daysInfo.year}`);
+      if (i < 10) {
+        day.push(`${daysInfo.month} 0${parseInt(i, 10)} ${daysInfo.year}`);
       } else {
-        day.push(`${daysInfo.month} 0${i} ${daysInfo.year}`);
+        day.push(`${daysInfo.month} ${i} ${daysInfo.year}`);
       }
     }
     const data = {
