@@ -15,8 +15,7 @@ export default function CalendarComponent({ bookings, house }) {
   const [errMsg, setErrMsg] = useState("");
   const [bookInfo, setBookInfo] = useState(null);
   const [nameInput, setNameInput] = useState("");
-
-  console.log("CALENDAR", bookings);
+  const [showNameInput, setShowNameInput] = useState(false);
 
   const days_taken = bookings.map((book) => book.day).flat();
 
@@ -69,85 +68,74 @@ export default function CalendarComponent({ bookings, house }) {
         }
       );
       setErrMsg("");
+      setShowNameInput(false);
       setMessage("Reservado exitosamente!");
     } catch (err) {
       console.log(err?.response?.data);
-      setErrMsg(err?.response.data.message)
+      setErrMsg(err?.response.data.message);
     }
   };
 
   return (
     <div className={s.container}>
-      <div className={s.first_column}>
-        <div className={s.iden}>
-          <div className={s.disponible}>
-            <div></div>
-            <p>Disponible</p>
-          </div>
-          <div className={s.reservado}>
-            <div></div>
-            <p>Reservado</p>
-          </div>
-          {auth.accessToken && (
-            <div className={s.btn_container}>
-              <button
-                type="button"
-                onClick={() => {
-                  setAllowRange(!allowRange);
-                }}
-              >
-                {allowRange ? "A Singular" : "A Rango"}
-              </button>
-            </div>
-          )}
+      <div className={s.iden}>
+        <div className={s.disponible}>
+          <div></div>
+          <p>Disponible</p>
         </div>
+        <div className={s.reservado}>
+          <div></div>
+          <p>Reservado</p>
+        </div>
+        {auth.accessToken && (
+          <div className={s.btn_container}>
+            <button
+              type="button"
+              onClick={() => {
+                setAllowRange(!allowRange);
+              }}
+            >
+              {allowRange ? "A Singular" : "A Rango"}
+            </button>
+          </div>
+        )}
+      </div>
 
-        <div className={s.calendar_container}>
-          <Calendar
-            className="react-calendar"
-            onChange={onChange}
+      <div className={s.calendar_container}>
+        <Calendar
+          className="react-calendar"
+          onChange={onChange}
+          value={value}
+          locale="es-419"
+          minDate={new Date("05-29-2022")}
+          selectRange={allowRange}
+          onClickDay={auth.accessToken ? (value) => clickedDay(value) : null}
+          tileClassName={({ date, view }) => {
+            if (
+              days_taken.find(
+                (day) =>
+                  day === date.toString().split(" ").slice(1, 4).join(" ")
+              )
+            ) {
+              return s.booking_tile;
+            } else {
+              return;
+            }
+          }}
+        />
+
+        {auth.accessToken && (
+          <BookAction
+            nameInput={nameInput}
             value={value}
-            locale="es-419"
-            minDate={new Date("05-29-2022")}
-            selectRange={allowRange}
-            onClickDay={auth.accessToken ? (value) => clickedDay(value) : null}
-            // tileContent={({ activeStartDate, date, view }) =>
-            //   date.toString() ===
-            //   "Sun Jun 05 2022 00:00:00 GMT-0300 (hora estándar de Argentina)"
-            //     ? "Reservado"
-            //     : null
-            // }
-
-            tileClassName={({ date, view }) => {
-              if (
-                days_taken.find(
-                  (day) =>
-                    day === date.toString().split(" ").slice(1, 4).join(" ")
-                )
-              ) {
-                return s.booking_tile;
-              } else {
-                return;
-              }
-            }}
+            handleBook={handleBook}
+            handleNameBook={handleNameBook}
+            message={message}
+            errMsg={errMsg}
+            showNameInput={showNameInput}
+            setShowNameInput={setShowNameInput}
           />
-
-          {auth.accessToken && (
-            <BookAction
-              nameInput={nameInput}
-              value={value}
-              handleBook={handleBook}
-              handleNameBook={handleNameBook}
-            />
-          )}
-
-          {auth.accessToken && (errMsg || message) && (
-            <div className={s.message}>
-              <p className={s.err_msg}>{errMsg && errMsg}</p>
-              <p>{message && message}</p>
-            </div>
-          )}
-        </div>
+        )}
       </div>
       {auth.accessToken && <BookInfo bookInfo={bookInfo} />}
     </div>

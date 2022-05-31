@@ -10,80 +10,62 @@
     display: block;
   }
 
-  .first_column {
-    grid-column: 1;
+  @media only screen and (max-width: 600px) {
+    display: block;
+  }
+
+  .iden {
     display: flex;
-    align-items: flex-start;
+    margin-right: 4rem;
+    flex-direction: column;
+    gap: 1rem;
 
     @media only screen and (max-width: 600px) {
-      display: block;
+      margin-bottom: 2rem;
     }
 
-    .iden {
+    .disponible {
       display: flex;
-      margin-right: 4rem;
-      flex-direction: column;
       gap: 1rem;
-
-      @media only screen and (max-width: 600px) {
-        margin-bottom: 2rem;
-      }
-
-      .disponible {
-        display: flex;
-        gap: 1rem;
-        align-items: center;
-        > div {
-          height: 25px;
-          width: 25px;
-          border: 1px solid black;
-          background-color: white;
-          border-radius: 0.3rem;
-        }
-      }
-
-      .reservado {
-        display: flex;
-        gap: 1rem;
-        align-items: center;
-        > div {
-          height: 25px;
-          width: 25px;
-          border: 1px solid black;
-          background-color: #27af37;
-          border-radius: 0.3rem;
-        }
-      }
-
-      .btn_container {
-        margin-top: 1rem;
-
-        button {
-          border-radius: 0.5rem;
-          border: none;
-          padding: 0.5rem 1rem;
-          background-color: $primary;
-          box-shadow: rgba(61, 61, 61, 0.192) 0px 0px 4px 1px;
-          font-size: 0.9rem;
-
-          &:hover {
-            cursor: pointer;
-            background-color: $primaryBG;
-          }
-        }
+      align-items: center;
+      > div {
+        height: 25px;
+        width: 25px;
+        border: 1px solid black;
+        background-color: white;
+        border-radius: 0.3rem;
       }
     }
-  }
-}
 
-.calendar_container {
-  // margin-left: auto;
+    .reservado {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      > div {
+        height: 25px;
+        width: 25px;
+        border: 1px solid black;
+        background-color: #27af37;
+        border-radius: 0.3rem;
+      }
+    }
 
-  .message {
-    margin-top: 1rem;
+    .btn_container {
+      margin-top: 1rem;
 
-    .err_msg {
-      color: rgb(211, 23, 23);
+      button {
+        border-radius: 0.5rem;
+        border: none;
+        padding: 0.5rem 1rem;
+        background-color: $primary;
+        box-shadow: rgba(61, 61, 61, 0.192) 0px 0px 4px 1px;
+        font-size: 0.9rem;
+
+        &:hover {
+          cursor: pointer;
+          background-color: $primaryBG;
+        }
+      }
     }
   }
 }

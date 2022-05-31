@@ -20,8 +20,6 @@ export default function HouseCard({
     ssr: false,
   });
 
-  console.log("BOOKINGS", bookings);
-
   const [showCalendar, setShowCalendar] = useState({
     arauco: false,
     coratina: false,

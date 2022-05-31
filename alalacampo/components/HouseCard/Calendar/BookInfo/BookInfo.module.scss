@@ -1,24 +1,24 @@
 .book_info {
-    // width: 300px;
+  margin-left: 1rem;
+  
+  > p {
+    font-size: 1.2rem;
+  }
 
-    > p {
-      font-size: 1.2rem;
+  > div {
+    width: 100%;
+    margin-top: 0.2rem;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    row-gap: 0.5rem;
+    column-gap: 1rem;
+
+    .title {
+      font-weight: 900;
     }
 
-    > div {
-      width: 100%;
-      margin-top: 0.2rem;
-      display: grid;
-      grid-template-columns: 33% 33% 33%;
-      row-gap: .5rem;
-      column-gap: 1rem;
-
-      .title {
-        font-weight: 900;
-      }
-
-      .info{
-        padding-left: .5rem;
-      }
+    .info {
+      padding-left: 0.5rem;
     }
   }
+}
