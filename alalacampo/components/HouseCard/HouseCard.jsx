@@ -153,13 +153,13 @@ export default function HouseCard({
         </div>
       </div>
       {name === "arauco" && showCalendar.arauco && (
-        <Calendar bookings={bookings.arauco} />
+        <Calendar bookings={bookings.arauco} house="arauco" />
       )}
       {name === "coratina" && showCalendar.coratina && (
-        <Calendar bookings={bookings.coratina} />
+        <Calendar bookings={bookings.coratina} house="coratina" />
       )}
       {name === "aloreña" && showCalendar.aloreña && (
-        <Calendar bookings={bookings.alorenia} />
+        <Calendar bookings={bookings.alorenia} house="aloreña" />
       )}
     </>
   );

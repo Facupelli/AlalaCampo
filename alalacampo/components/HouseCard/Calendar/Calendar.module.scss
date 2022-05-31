@@ -1,4 +1,4 @@
-@import '../../../styles/app.scss';
+@import "../../../styles/app.scss";
 
 .container {
   display: grid;
@@ -53,18 +53,18 @@
         }
       }
 
-      .btn_container{
+      .btn_container {
         margin-top: 1rem;
 
-        button{
-          border-radius: .5rem;
+        button {
+          border-radius: 0.5rem;
           border: none;
-          padding: .5rem 1rem;
+          padding: 0.5rem 1rem;
           background-color: $primary;
           box-shadow: rgba(61, 61, 61, 0.192) 0px 0px 4px 1px;
-          font-size: .9rem;
+          font-size: 0.9rem;
 
-          &:hover{
+          &:hover {
             cursor: pointer;
             background-color: $primaryBG;
           }
@@ -77,17 +77,48 @@
 .calendar_container {
   margin-left: auto;
 
-  .range {
+  .booking_container {
+    display: flex;
+    align-items: flex-end;
     margin-top: 1rem;
 
-    p {
-      &:first-child {
-        margin-bottom: 0.5rem;
+    .range {
+      p {
+        &:first-child {
+          margin-bottom: 0.5rem;
+        }
+      }
+
+      span {
+        font-weight: 900;
       }
     }
 
-    span {
-      font-weight: 900;
+    .book_btn_container {
+      margin-left: auto;
+
+      button {
+        border-radius: 0.5rem;
+        border: none;
+        padding: 0.5rem 1rem;
+        background-color: $primary;
+        box-shadow: rgba(61, 61, 61, 0.192) 0px 0px 4px 1px;
+        font-size: 0.9rem;
+
+        &:hover {
+          cursor: pointer;
+          background-color: $primaryBG;
+        }
+      }
+    }
+
+  }
+  .message{
+    margin-top: 1rem;
+    width: 350px;
+
+    .err_msg{
+      color: rgb(211, 23, 23);
     }
   }
 }
