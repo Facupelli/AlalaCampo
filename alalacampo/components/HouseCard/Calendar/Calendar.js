@@ -50,8 +50,9 @@ export default function CalendarComponent({ bookings, house }) {
     for (let i = startDay; i <= endDay; i++) {
       if (i > 10) {
         day.push(`${daysInfo.month} ${i} ${daysInfo.year}`);
+      } else {
+        day.push(`${daysInfo.month} 0${i} ${daysInfo.year}`);
       }
-      day.push(`${daysInfo.month} 0${i} ${daysInfo.year}`);
     }
     const data = {
       day,
