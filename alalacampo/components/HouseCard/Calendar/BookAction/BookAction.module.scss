@@ -43,17 +43,22 @@
     position: absolute;
     right: -190px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 0px 3px 1px;
-    padding: .7rem;
-    border-radius: .2rem;
+    padding: 0.7rem;
+    border-radius: 0.2rem;
 
-    label{
-      margin-bottom: .2rem;
-      font-size: .9rem;
+    @media (max-width: 480px) {
+      right: 0px;
+      bottom: -100px;
+    }
+
+    label {
+      margin-bottom: 0.2rem;
+      font-size: 0.9rem;
     }
 
     input {
       width: 150px;
-      padding: .4rem;
+      padding: 0.4rem;
       // border-radius: 0.5rem;
       border: none;
       font-size: 1rem;

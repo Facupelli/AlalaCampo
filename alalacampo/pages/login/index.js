@@ -26,7 +26,7 @@ export default function Login() {
     }
     try {
       const response = await axios.post(
-        "https://www.alalacampo.com/api/login",
+        "http://localhost:3000/api/login",
         data,
         {
           headers: { "Content-Type": "application/json" },

@@ -1,5 +1,10 @@
 .book_info {
   margin-left: 1rem;
+
+  @media (max-width: 480px) {
+    margin-left: 0;
+    margin-top: 1rem;
+  }
   
   > p {
     font-size: 1.2rem;
