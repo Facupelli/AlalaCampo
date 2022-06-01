@@ -92,7 +92,7 @@ export default function Home({ bookings }) {
           inicioRef={inicioRef}
           casasRef={casasRef}
           ubicacionRef={ubicacionRef}
-          contactRe={contactRef}
+          contactRef={contactRef}
         />
         <div className="app_container">
           <Place />
