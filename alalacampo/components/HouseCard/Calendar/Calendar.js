@@ -8,7 +8,7 @@ import BookInfo from "./BookInfo/BookInfo";
 import BookAction from "./BookAction/BookAction";
 
 export default function CalendarComponent({ bookings, house }) {
-  const { auth, setAuth } = useContext(AuthContext);
+  const { auth } = useContext(AuthContext);
   const [value, onChange] = useState(new Date());
   const [allowRange, setAllowRange] = useState(false);
   const [message, setMessage] = useState("");
@@ -32,28 +32,48 @@ export default function CalendarComponent({ bookings, house }) {
   };
 
   const handleBook = async () => {
-    const startDay = value[0].toDateString().split(" ")[2];
-    const endDay = value[1].toDateString().split(" ")[2];
+    let day = [];
 
-    if (endDay < startDay) {
-      setMessage("");
-      setErrMsg("Error, deber realizar dos reservas, una para cada mes.");
+    if (value.length > 0) {
+      const startDay = value[0].toDateString().split(" ")[2];
+      const endDay = value[1].toDateString().split(" ")[2];
+
+      if (endDay < startDay) {
+        setMessage("");
+        setErrMsg("Error, deber realizar dos reservas, una para cada mes.");
+        return;
+      }
+
+      const daysInfo = {
+        month: value[0].toDateString().split(" ")[1],
+        year: value[0].toDateString().split(" ")[3],
+      };
+
+      for (let i = startDay; i <= endDay; i++) {
+        if (i < 10) {
+          day.push(`${daysInfo.month} 0${parseInt(i, 10)} ${daysInfo.year}`);
+        } else {
+          day.push(`${daysInfo.month} ${i} ${daysInfo.year}`);
+        }
+      }
+    }else{
+      day = [value.toDateString().split(' ').slice(1,4).join(" ")];
+    }
+
+    const datesInCommon = () => {
+      const datesBooked = days_taken.filter((date) => day.includes(date));
+
+      if (datesBooked.length > 0) {
+        return true;
+      }
+      return false;
+    };
+
+    if (datesInCommon()) {
+      setErrMsg("Alguna de las fechas ya esta reservada!");
       return;
     }
 
-    const daysInfo = {
-      month: value[0].toDateString().split(" ")[1],
-      year: value[0].toDateString().split(" ")[3],
-    };
-    const day = [];
-
-    for (let i = startDay; i <= endDay; i++) {
-      if (i < 10) {
-        day.push(`${daysInfo.month} 0${parseInt(i, 10)} ${daysInfo.year}`);
-      } else {
-        day.push(`${daysInfo.month} ${i} ${daysInfo.year}`);
-      }
-    }
     const data = {
       day,
       house,
@@ -62,7 +82,8 @@ export default function CalendarComponent({ bookings, house }) {
 
     try {
       const response = await axios.post(
-        "https://www.alalacampo.com/api/book",
+        // "https://www.alalacampo.com/api/book",
+        "http://localhost:3000/api/book",
         data,
         {
           headers: { "Content-Type": "application/json" },
@@ -128,11 +149,13 @@ export default function CalendarComponent({ bookings, house }) {
         {auth.accessToken && (
           <BookAction
             nameInput={nameInput}
+            setNameInput={setNameInput}
             value={value}
             handleBook={handleBook}
             handleNameBook={handleNameBook}
             message={message}
             errMsg={errMsg}
+            setErrMsg={setErrMsg}
             showNameInput={showNameInput}
             setShowNameInput={setShowNameInput}
           />

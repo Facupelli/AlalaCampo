@@ -5,19 +5,23 @@ import s from "./BookAction.module.scss";
 export default function BookAction({
   value,
   nameInput,
+  setNameInput,
   handleBook,
   handleNameBook,
   message,
   errMsg,
+  setErrMsg,
   showNameInput,
   setShowNameInput,
 }) {
   const handleBookBtn = () => {
     setShowNameInput(true);
+    setNameInput('')
   };
 
   const handleCancelBook = () => {
     setShowNameInput(false);
+    setErrMsg('')
   };
 
   return (
