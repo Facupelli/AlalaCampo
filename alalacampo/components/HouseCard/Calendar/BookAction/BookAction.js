@@ -16,12 +16,12 @@ export default function BookAction({
 }) {
   const handleBookBtn = () => {
     setShowNameInput(true);
-    setNameInput('')
+    setNameInput("");
   };
 
   const handleCancelBook = () => {
     setShowNameInput(false);
-    setErrMsg('')
+    setErrMsg("");
   };
 
   return (
@@ -73,8 +73,8 @@ export default function BookAction({
       </div>
       {(errMsg || message) && (
         <div className={s.message}>
-          <p className={s.err_msg}>{errMsg && errMsg}</p>
-          <p className={s.success_msg}>{message && message}</p>
+          {errMsg && <p className={s.err_msg}>{errMsg}</p>}
+          {message && <p className={s.success_msg}>{message}</p>}
         </div>
       )}
     </>
