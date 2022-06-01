@@ -32,6 +32,11 @@ export default function CalendarComponent({ bookings, house }) {
   };
 
   const handleBook = async () => {
+    if (!nameInput) {
+      setErrMsg("Debe agendar nombre!");
+      return;
+    }
+    
     let day = [];
 
     if (value.length > 0) {
@@ -56,8 +61,8 @@ export default function CalendarComponent({ bookings, house }) {
           day.push(`${daysInfo.month} ${i} ${daysInfo.year}`);
         }
       }
-    }else{
-      day = [value.toDateString().split(' ').slice(1,4).join(" ")];
+    } else {
+      day = [value.toDateString().split(" ").slice(1, 4).join(" ")];
     }
 
     const datesInCommon = () => {
