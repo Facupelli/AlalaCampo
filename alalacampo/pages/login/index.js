@@ -1,4 +1,5 @@
 import axios from "axios";
+import { DotWave } from "@uiball/loaders";
 import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import AuthContext from "../../context/AuthProvider";
@@ -10,6 +11,7 @@ import s from "./login.module.scss";
 export default function Login() {
   const { auth, setAuth } = useContext(AuthContext);
   const [loginErr, setLoginErr] = useState("");
+  const [loading, setLoading] = useState(false);
   const router = useRouter();
 
   const {
@@ -25,6 +27,8 @@ export default function Login() {
       return;
     }
     try {
+      setLoginErr('');
+      setLoading(true);
       const response = await axios.post(
         "http://localhost:3000/api/login",
         // "https://www.alalacampo.com/api/login",
@@ -36,11 +40,12 @@ export default function Login() {
       );
       const accessToken = response?.data?.token;
       setAuth({ email: data.email, accessToken });
-      localStorage.setItem('accessToken', accessToken)
+      localStorage.setItem("accessToken", accessToken);
       setLoginErr("");
       router.push("/");
     } catch (err) {
       setLoginErr(err?.response?.data?.error);
+      setLoading(false)
     }
   };
 
@@ -59,6 +64,11 @@ export default function Login() {
           <input type="password" required {...register("password")} />
           <button type="submit">LOGIN</button>
         </form>
+        {loading && (
+          <div className={s.loading_container}>
+            <DotWave size={47} speed={1} color="#f7de86" />
+          </div>
+        )}
         <p className={s.err}>{loginErr && loginErr}</p>
       </div>
       <div className={s.footer_container}>

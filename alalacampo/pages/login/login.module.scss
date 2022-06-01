@@ -58,6 +58,12 @@
     }
   }
 
+  .loading_container{
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+
   .err {
     color: rgb(218, 20, 20);
     text-align: center;
