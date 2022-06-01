@@ -128,7 +128,7 @@ export default function CalendarComponent({ bookings, house }) {
         )}
       </div>
 
-      <div className={s.calendar_container}>
+      <div className={auth.accessToken ? s.calendar_container : null}>
         <Calendar
           className="react-calendar"
           onChange={onChange}
