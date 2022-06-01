@@ -51,6 +51,14 @@
       bottom: -100px;
     }
 
+    .xmark_icon {
+      margin-left: auto;
+
+      &:hover{
+        cursor: pointer;
+      }
+    }
+
     label {
       margin-bottom: 0.2rem;
       font-size: 0.9rem;

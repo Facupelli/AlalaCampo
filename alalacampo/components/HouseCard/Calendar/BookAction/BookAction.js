@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import s from "./BookAction.module.scss";
 
 export default function BookAction({
@@ -13,6 +14,10 @@ export default function BookAction({
 }) {
   const handleBookBtn = () => {
     setShowNameInput(true);
+  };
+
+  const handleCancelBook = () => {
+    setShowNameInput(false);
   };
 
   return (
@@ -46,6 +51,12 @@ export default function BookAction({
             </div>
 
             <div className={s.book_inpit_container}>
+              <FontAwesomeIcon
+                icon={faXmark}
+                width="10px"
+                className={s.xmark_icon}
+                onClick={handleCancelBook}
+              />
               <label>Nombre</label>
               <input
                 autoFocus
