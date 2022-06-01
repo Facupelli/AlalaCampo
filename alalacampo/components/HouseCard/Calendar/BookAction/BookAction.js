@@ -74,7 +74,7 @@ export default function BookAction({
       {(errMsg || message) && (
         <div className={s.message}>
           <p className={s.err_msg}>{errMsg && errMsg}</p>
-          <p>{message && message}</p>
+          <p className={s.success_msg}>{message && message}</p>
         </div>
       )}
     </>

@@ -54,7 +54,7 @@
     .xmark_icon {
       margin-left: auto;
 
-      &:hover{
+      &:hover {
         cursor: pointer;
       }
     }
@@ -87,5 +87,11 @@
 
   .err_msg {
     color: rgb(211, 23, 23);
+  }
+
+  .success_msg {
+    padding: 0.2rem 0.5rem;
+    color: white;
+    background-color: #27af37;
   }
 }
