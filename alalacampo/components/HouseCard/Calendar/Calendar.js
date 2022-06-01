@@ -36,7 +36,7 @@ export default function CalendarComponent({ bookings, house }) {
       setErrMsg("Debe agendar nombre!");
       return;
     }
-    
+
     let day = [];
 
     if (value.length > 0) {
