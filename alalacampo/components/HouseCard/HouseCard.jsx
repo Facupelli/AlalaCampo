@@ -86,7 +86,7 @@ export default function HouseCard({
                   con 3 cuchetas, 1 habitacion con una cama y una cucheta, 1
                   sofacama con cama marinera)
                 </li>
-                <li>Baños: 3 baños</li>
+                <li>3 baños</li>
                 <li>Aire acondicionado frio/calor en todos los ambientes</li>
                 <li>Televisor con antena</li>
                 <li>Horno, microondas</li>
@@ -106,7 +106,7 @@ export default function HouseCard({
                   2 habitaciones (1 matrimonial, 1 habitacion con 2 cuchetas, 1
                   sofacama con cama marinera)
                 </li>
-                <li>Baños: 1 baño</li>
+                <li>1 baño</li>
                 <li>Aire acondicionado frio/calor en todos los ambientes</li>
                 <li>Totalmente equipada las habitaciones y la cocina</li>
                 <li>Televisor con antena</li>
@@ -124,7 +124,7 @@ export default function HouseCard({
               <ul>
                 <li>Capacidad para 2-4 personas</li>
                 <li>Monoambiente</li>
-                <li>Baños: 1 baño</li>
+                <li>1 baño</li>
                 <li>Aire acondicionado frio/calor</li>
                 <li>Totalmente equipada las habitaciones y la cocina</li>
                 <li>Televisor con antena</li>

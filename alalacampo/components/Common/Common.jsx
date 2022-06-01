@@ -16,7 +16,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export default function Common({inicioRef}) {
   return (
     <div className={s.container} ref={inicioRef}>
-      <p>SERVICIOS COMUNES</p>
+      <p>SERVICIOS</p>
       <div className={s.grid}>
         <div className={s.column}>
           <div>
