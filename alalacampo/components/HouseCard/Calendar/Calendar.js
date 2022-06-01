@@ -87,8 +87,8 @@ export default function CalendarComponent({ bookings, house }) {
 
     try {
       const response = await axios.post(
-        // "https://www.alalacampo.com/api/book",
-        "http://localhost:3000/api/book",
+        "https://www.alalacampo.com/api/book",
+        // "http://localhost:3000/api/book",
         data,
         {
           headers: { "Content-Type": "application/json" },

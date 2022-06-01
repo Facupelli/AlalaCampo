@@ -30,8 +30,8 @@ export default function Login() {
       setLoginErr('');
       setLoading(true);
       const response = await axios.post(
-        "http://localhost:3000/api/login",
-        // "https://www.alalacampo.com/api/login",
+        // "http://localhost:3000/api/login",
+        "https://www.alalacampo.com/api/login",
         data,
         {
           headers: { "Content-Type": "application/json" },
