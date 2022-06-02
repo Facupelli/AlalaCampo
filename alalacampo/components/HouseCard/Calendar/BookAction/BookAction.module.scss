@@ -49,6 +49,8 @@
     @media (max-width: 480px) {
       right: 0px;
       bottom: -100px;
+      z-index: 1;
+      background-color: white;
     }
 
     .xmark_icon {

@@ -6,10 +6,10 @@
   margin-right: auto;
   margin-top: 5rem;
   height: 80vh;
-  min-height: 80vh;
 
   @media (max-width: 400px) {
     max-width: 320px;
+    min-height: 400px;
   }
 
   .login {
@@ -17,7 +17,7 @@
     font-size: 1.4rem;
     margin-bottom: 1rem;
   }
- 
+
   .form {
     display: flex;
     flex-direction: column;
@@ -58,7 +58,7 @@
     }
   }
 
-  .loading_container{
+  .loading_container {
     display: flex;
     justify-content: center;
     margin-top: 2rem;
@@ -69,7 +69,6 @@
     text-align: center;
     margin-top: 1rem;
   }
-
 }
 
 .footer_container {
