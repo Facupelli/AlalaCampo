@@ -50,14 +50,22 @@ export default function HouseCard({
               infiniteLoop={true}
               renderArrowPrev={(clickHandler, hasPrev, labelPrev) =>
                 hasPrev && (
-                  <button name="previous" className={s.arrowPrev} onClick={clickHandler}>
+                  <button
+                    aria-label="previous"
+                    className={s.arrowPrev}
+                    onClick={clickHandler}
+                  >
                     <FontAwesomeIcon icon={faArrowLeft} width="15px" />
                   </button>
                 )
               }
               renderArrowNext={(clickHandler, hasNext, labelPrev) =>
                 hasNext && (
-                  <button name="next" className={s.arrowNext} onClick={clickHandler}>
+                  <button
+                    aria-label="next"
+                    className={s.arrowNext}
+                    onClick={clickHandler}
+                  >
                     <FontAwesomeIcon icon={faArrowRight} width="15px" />
                   </button>
                 )
