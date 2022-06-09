@@ -43,6 +43,7 @@ export default function HouseCard({
         <div className={s.grid_container}>
           <div className={s.carousel}>
             <Carousel
+              showIndicators={false}
               dynamicHeight={false}
               showStatus={false}
               showThumbs={false}
