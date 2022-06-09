@@ -55,8 +55,8 @@ export default function Pics() {
                   onClick={() => handleImgClick(el)}
                   src={el}
                   alt="pics"
-                  width="100px"
-                  height="100px"
+                  width="100"
+                  height="100"
                   objectFit="cover"
                   style={{borderRadius: ".3rem"}}
                 />

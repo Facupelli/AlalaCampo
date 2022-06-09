@@ -39,7 +39,13 @@ export default function Modal({ setShowModal, img, handleNext, handlePrev }) {
           </div>
         </div>
         <div className={s.image_container}>
-          <Image src={img} alt="zoom" objectFit="cover" width="615px"  />
+          <Image
+            src={img}
+            alt={img}
+            width={578}
+            height={434}
+            layout="responsive"
+          />
         </div>
       </div>
     </div>

@@ -22,17 +22,18 @@
   height: 600px;
   background: white;
   border-radius: 16px;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  // box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.3);
   padding: 1rem;
 
   @media only screen and (max-width: 600px) {
     width: 380px;
-    height: 600px;
+    height: 500px;
   }
 
   @media only screen and (max-width: 480px){
     width: 340px;
-    height: 480px;
+    height: 380px;
   }
 }
 
@@ -58,20 +59,4 @@
   cursor: pointer;
 }
 
-.image_container {
-  width: 615px;
-  height: 520px;
-  display: flex;
-  justify-content: center;
-
-  @media only screen and (max-width: 600px){
-    width: 350px;
-    height: 520px;
-  }
-
-  @media only screen and (max-width: 480px){
-    width: 310px;
-    height: 400px;
-  }
-}
 

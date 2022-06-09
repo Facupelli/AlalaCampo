@@ -77,7 +77,7 @@ export default function Home({ bookings }) {
         <title>Alala Campo</title>
         <meta
           name="description"
-          content="San Juan, Pocito. Veni a descansar a Alala Campo!"
+          content="San Juan, Pocito. Veni a descansar a Alala Campo! Alquiler de cabañas con pileta."
         />
         <meta
           name="keywords"

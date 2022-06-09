@@ -15,7 +15,7 @@ export default function Nav({
       <div className={s.container1}>
         <div className={s.container2}>
           <div className={s.logo}>
-            <Image src={logo} width="100px" height="40px" alt="logo" objectFit="contain" />
+            <Image src={logo} width="100" height="40" alt="logo" objectFit="contain" />
           </div>
           <div className={s.sections_buttons}>
             <div className="md:pr-8">

@@ -68,7 +68,13 @@ export default function HouseCard({
               {images &&
                 images.map((image, i) => (
                   <div key={i}>
-                    <Image src={image} alt={image} objectFit="cover" />
+                    <Image
+                      src={image}
+                      alt={image}
+                      width={578}
+                      height={434}
+                      layout="responsive"
+                    />
                   </div>
                 ))}
             </Carousel>
