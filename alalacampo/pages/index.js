@@ -104,20 +104,71 @@ export default function Home({ bookings }) {
               images={araucoImages}
               handleClick={handleConsultarClick}
               casasRef={casasRef}
-              bookings={bookings}
-            />
+              bookings={bookings.arauco}
+            >
+              <ul>
+                <li>Capacidad para 12-14 personas</li>
+                <li>
+                  3 habitaciones (1 matrimonial con una cama extra, 1 habitacion
+                  con 3 cuchetas, 1 habitacion con una cama y una cucheta, 1
+                  sofacama con cama marinera)
+                </li>
+                <li>3 baños</li>
+                <li>Aire acondicionado frio/calor en todos los ambientes</li>
+                <li>Televisor con antena</li>
+                <li>Horno, microondas</li>
+                <li>Hogar a leña</li>
+                <li>Heladera exhibidora y freezer</li>
+                <li>Parillero amplio, horno chileno</li>
+                <li>Mesa de ping pong, mesa de pool, metegol</li>
+                <li>Cancha de futbol, cancha de Volley</li>
+              </ul>
+            </HouseCard>
             <HouseCard
               name="coratina"
               images={coratinaImages}
               handleClick={handleConsultarClick}
-              bookings={bookings}
-            />
+              bookings={bookings.coratina}
+            >
+              <ul>
+                <li>Capacidad para 6-8 personas</li>
+                <li>
+                  2 habitaciones (1 matrimonial, 1 habitacion con 2 cuchetas, 1
+                  sofacama con cama marinera)
+                </li>
+                <li>1 baño</li>
+                <li>Aire acondicionado frio/calor en todos los ambientes</li>
+                <li>Totalmente equipada las habitaciones y la cocina</li>
+                <li>Televisor con antena</li>
+                <li>Horno eléctrico</li>
+                <li>Heladera</li>
+                <li>Parillero</li>
+                <li>Pileta</li>
+                <li>Juego de campo</li>
+                <li>Estacionamiento cubierto</li>
+              </ul>
+            </HouseCard>
             <HouseCard
               name="aloreña"
               images={aloreImages}
               handleClick={handleConsultarClick}
-              bookings={bookings}
-            />
+              bookings={bookings.aloreña}
+            >
+              <ul>
+                <li>Capacidad para 2-4 personas</li>
+                <li>Monoambiente</li>
+                <li>1 baño</li>
+                <li>Aire acondicionado frio/calor</li>
+                <li>Totalmente equipada las habitaciones y la cocina</li>
+                <li>Televisor con antena</li>
+                <li>Horno eléctrico</li>
+                <li>Heladera</li>
+                <li>Parillero</li>
+                <li>Pileta</li>
+                <li>Juego de campo</li>
+                <li>Estacionamiento cubierto</li>
+              </ul>
+            </HouseCard>
 
             <Map ubicacionRef={ubicacionRef} />
           </div>
