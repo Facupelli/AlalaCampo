@@ -8,7 +8,7 @@ import Image from "next/image";
 export default function Place() {
   return (
     <div className={s.container}>
-      <p className={s.text}>ALALA CAMPO VENI A DESCANSAR</p>
+      <p className={s.text}>Alala Campo. Veni a descansar.</p>
       <div className={s.image}>
         <Image
           src={complejo}
