@@ -176,7 +176,6 @@ export default function Home({ bookings }) {
           <div className={s.body}>
             <Pics />
           </div>
-
           <Contact contactRef={contactRef} def={def} inputRef={inputRef} />
         </div>
       </main>

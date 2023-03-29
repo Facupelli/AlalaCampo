@@ -2,7 +2,6 @@ import dynamic from "next/dynamic";
 
 import s from "./MapSection.module.scss";
 
-
 export default function Map({ ubicacionRef }) {
   const Map = dynamic(() => import("./Map/Map"), {
     loading: () => <p>Map Loading...</p>,
@@ -11,7 +10,15 @@ export default function Map({ ubicacionRef }) {
 
   return (
     <div style={{ marginTop: "6rem" }} ref={ubicacionRef}>
-      <p style={{ fontSize: "2rem", marginBottom: "3rem" }}>UBICACIÓN</p>
+      <p
+        style={{
+          fontSize: "2rem",
+          marginBottom: "3rem",
+          fontFamily: "Crete Round, serif",
+        }}
+      >
+        UBICACIÓN
+      </p>
       <div className={s.grid_container}>
         <div>
           <p>
@@ -20,7 +27,7 @@ export default function Map({ ubicacionRef }) {
           </p>
         </div>
 
-        <div style={{ border: "#e6e6e6 1px solid" }}>
+        <div style={{ border: "#e6e6e6 1px solid", borderRadius: 3 }}>
           <Map />
         </div>
       </div>

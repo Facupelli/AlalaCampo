@@ -5,13 +5,14 @@
   margin-left: auto;
   margin-right: auto;
   padding: 1rem 0rem;
+  font-family: "Crete Round", serif;
 
   @media only screen and (max-width: 400px) {
     margin: 0rem 1rem;
   }
 
   .admin {
-    color: #bd9f37;
+    color: $primary;
     margin-top: 0.3rem;
     font-size: 0.9rem;
 
@@ -34,7 +35,7 @@
   }
 
   div {
-    color: #bd9f37;
+    color: $primary;
     font-size: 0.8rem;
     display: flex;
     align-items: center;
@@ -42,16 +43,16 @@
 
     @media only screen and (max-width: 600px) {
       margin-top: 1rem;
-      color: #bd9f37;
+      color: $primary;
     }
     a {
       display: flex;
       align-items: center;
       gap: 0.2rem;
-      color: #bd9f37;
+      color: $primary;
       text-decoration: none;
       &:visited {
-        color: #bd9f37;
+        color: $primary;
       }
       &:hover {
         color: black;

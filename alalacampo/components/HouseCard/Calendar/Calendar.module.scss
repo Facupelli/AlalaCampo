@@ -45,7 +45,7 @@
         height: 25px;
         width: 25px;
         border: 1px solid black;
-        background-color: #27af37;
+        background-color: $s-blue;
         border-radius: 0.3rem;
       }
     }
@@ -69,7 +69,7 @@
     }
   }
 
-  .calendar_container{
+  .calendar_container {
     margin-right: 4rem;
   }
 }
@@ -83,7 +83,7 @@
 }
 
 .booking_tile {
-  background: #27af37;
+  background: #5a6a8a;
   color: white;
   max-width: 100%;
   padding: 10px 6.6667px;

@@ -7,6 +7,7 @@
 .container > p {
   font-size: 2rem;
   margin-bottom: 3rem;
+  font-family: "Crete Round", serif;
 }
 
 .grid {
@@ -30,7 +31,7 @@
       align-items: center;
       gap: 0.5rem;
       margin-bottom: 1rem;
-      border-left: #d6d6d6 1px solid;
+      border-left: $secondary 1px solid;
 
       transition: all 0.3s ease-in-out;
 
@@ -39,12 +40,12 @@
       }
 
       &:hover .icons {
-        color: $primaryBG;
+        color: $primary;
         padding-left: 2rem;
       }
 
       &:hover {
-        border-left: $secondary 1px solid;
+        border-left: $primary 1px solid;
       }
     }
   }

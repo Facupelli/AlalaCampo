@@ -1,7 +1,10 @@
+@import "./app.scss";
+
 .app_container {
   max-width: 1400px;
   margin-left: auto;
   margin-right: auto;
+  background-color: $primaryBG;
 }
 
 .body {
@@ -19,6 +22,7 @@
 
   > p {
     font-size: 2rem;
+    font-family: "Crete Round", serif;
     margin-top: 6rem;
   }
 
@@ -42,7 +46,6 @@
 }
 
 .footer {
-  background-color: #ffeb80;
-  border: 2px solid #ffeb80;
-  box-shadow: #ffe899 0px 1px 3px 0px, #ffe382 0px 0px 0px 1px;
+  background-color: $s-blue;
+  box-shadow: $s-blue 0px 1px 3px 0px;
 }

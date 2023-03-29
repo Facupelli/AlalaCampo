@@ -12,11 +12,10 @@ L.Icon.Default.mergeOptions({
   shadowUrl: markerShadow.src,
 });
 
-
 export default function Map() {
   return (
     <MapContainer
-      style={{ height: "350px", width: "100%" }}
+      style={{ height: "350px", width: "100%", borderRadius: 3 }}
       center={[-31.569, -68.60071]}
       zoom={13}
     >

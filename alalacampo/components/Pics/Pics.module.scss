@@ -1,5 +1,6 @@
 .container {
-  margin-top: 3rem;
+  padding: 1em 0em;
+  margin-bottom: 3rem;
 
   > div {
     display: flex;
@@ -10,6 +11,7 @@
   .title {
     font-size: 2rem;
     margin-bottom: 3rem;
+    font-family: "Crete Round", serif;
   }
 
   .image {

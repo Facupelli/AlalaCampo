@@ -3,7 +3,8 @@
 .container {
   margin-top: 2rem;
   margin-bottom: 6rem;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   border-radius: 0.6rem;
 }
 
@@ -16,19 +17,13 @@
   display: grid;
   grid-template-columns: 50% 50%;
   background-color: #f5f5f5;
-  border-top-right-radius: 0.6rem;
-  border-bottom-right-radius: 0.6rem;
-  border-bottom-left-radius: 0.6rem;
+  border-radius: 0.6rem;
 
   > div {
     @media only screen and (max-width: 600px) {
       grid-column: 1/-1;
     }
   }
-
-  // &:hover .spec{
-  // clip-path: circle(75% );
-  // }
 
   .buttons {
     grid-column: 2;
@@ -56,8 +51,8 @@
 
       &:hover {
         cursor: pointer;
-        background-color: #ffe76e;
-        color: #363636;
+        background-color: $s-blue;
+        color: white;
       }
     }
   }
@@ -65,6 +60,7 @@
 
 .carousel {
   background-color: #f5f5f5;
+  border-radius: 0.6rem;
 
   @media only screen and (max-width: 600px) {
     border-bottom-left-radius: 0rem;
@@ -86,15 +82,6 @@
 
     li {
       padding-bottom: 0.4rem;
-
-      // &:before {
-      //   content: "+";
-      //   font-size: 0.7rem;
-      //   display: inline-block;
-      //   font-weight: bold;
-      //   margin-right: 0.5rem;
-      //   color: $primaryBG;
-      // }
     }
   }
 
@@ -108,9 +95,6 @@
       transition: all 0.2s ease-in-out;
     }
   }
-  // background-color: yellow;
-  // clip-path: circle(10% at 0% 0%);
-  // transition: clip-path .5s ease-in-out
 }
 
 .arrowPrev {
@@ -157,42 +141,3 @@
 .cargando {
   text-align: right;
 }
-
-// .button_container {
-//   position: absolute;
-//   bottom: 0;
-//   right: 0;
-//   z-index: 2;
-//   width: 95%;
-//   display: flex;
-//   justify-content: flex-end;
-//   margin-right: 2rem;
-
-//   @media only screen and (max-width: 600px) {
-//     position: relative;
-//   }
-
-//   button {
-//     padding: 0.6rem;
-//     text-decoration: none;
-//     border-radius: 1rem;
-//     border: 0;
-//     background: $primary;
-//     color: black;
-//     font-weight: bold;
-//     font-size: 1.2rem;
-//     letter-spacing: 0.1rem;
-//     margin-top: 2rem;
-//     margin-bottom: 1.8rem;
-//     width: 50%;
-//     cursor: pointer;
-//     font-size: 0.8rem;
-
-//     transition: all 0.2s ease-in-out;
-
-//     &:hover {
-//       background-color: #ffe76e;
-//       color: #363636;
-//     }
-//   }
-// }

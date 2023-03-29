@@ -1,6 +1,7 @@
 .grid_container {
   display: grid;
   grid-template-columns: 30% 70%;
+  column-gap: 2em;
 
   @media only screen and (max-width: 600px) {
     row-gap: 2rem;

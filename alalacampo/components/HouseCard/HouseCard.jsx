@@ -1,12 +1,11 @@
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Carousel } from "react-responsive-carousel";
+import Carousel from "nuka-carousel/lib/carousel";
 import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import dynamic from "next/dynamic";
+import { useState } from "react";
 
 import s from "./HouseCard.module.scss";
-import { useState } from "react";
 
 export default function HouseCard({
   name,
@@ -36,36 +35,31 @@ export default function HouseCard({
         <div className={s.grid_container}>
           <div className={s.carousel}>
             <Carousel
-              showIndicators={false}
-              dynamicHeight={false}
-              showStatus={false}
-              showThumbs={false}
-              infiniteLoop={true}
-              renderArrowPrev={(clickHandler, hasPrev, labelPrev) =>
-                hasPrev && (
-                  <button
-                    aria-label="previous"
-                    className={s.arrowPrev}
-                    onClick={clickHandler}
-                  >
-                    <FontAwesomeIcon icon={faArrowLeft} width="15px" />
-                  </button>
-                )
-              }
-              renderArrowNext={(clickHandler, hasNext, labelPrev) =>
-                hasNext && (
-                  <button
-                    aria-label="next"
-                    className={s.arrowNext}
-                    onClick={clickHandler}
-                  >
-                    <FontAwesomeIcon icon={faArrowRight} width="15px" />
-                  </button>
-                )
-              }
-              // renderThumbs={() =>
-              //   images.map((image, i) => <Image src={image} alt={image} />)
-              // }
+              dragging={true}
+              swiping={true}
+              style={{
+                borderTopLeftRadius: "8px",
+                borderTopRightRadius: "8px",
+              }}
+              defaultControlsConfig={{
+                nextButtonStyle: {
+                  backgroundColor: "transparent",
+                  filter: "drop-shadow(1px 1px 1px rgba(0,0,0,0.5))",
+                },
+                prevButtonStyle: {
+                  backgroundColor: "transparent",
+                  filter: "drop-shadow(1px 1px 1px rgba(0,0,0,0.5))",
+                },
+                nextButtonText: (
+                  <FontAwesomeIcon icon={faArrowRight} width="15px" />
+                ),
+                prevButtonText: (
+                  <FontAwesomeIcon icon={faArrowLeft} width="15px" />
+                ),
+                pagingDotsStyle: {
+                  padding: "0 2px",
+                },
+              }}
             >
               {images &&
                 images.map((image, i) => (
